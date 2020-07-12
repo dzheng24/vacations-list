@@ -33,7 +33,7 @@ function handleSubmit(e) {
   // clear the input data
 }
 
-function generateCard(dest, loc, pic, desc) {
+function generateCard(dest, loc, picLink, desc) {
   // generate card
   let newCard = document.createElement("div");
   newCard.class = "card";
@@ -57,9 +57,29 @@ function generateCard(dest, loc, pic, desc) {
   cardBody.append(newTitle);
 
   // make location name
+  let newSubtitle = document.createElement("h6");
+  newSubtitle.class = "card-subtitle mb-2 text-muted";
+  newSubtitle.innerHTML = loc;
+  cardBody.append(newSubtitle);
+
   // make description
+  let newDescription = document.createElement("p");
+  newDescription.class = "card-text";
+  newDescription.innerHTML = desc;
+  cardBody.append(newDescription);
+
   // make EDIT button
+  let editButton = document.createElement("button");
+  editButton.class = "btn btn-warning btn-sm";
+  editButton.innerHTML = "Edit";
+  newCard.append(editButton);
+
   // make REMOVE button
+  let deleteButton = document.createElement("button");
+  deleteButton.class = "btn btn-danger";
+  deleteButton.style.margin = "20px";
+  deleteButton.innerHTML = "Remove";
+  newCard.append(deleteButton);
 
   // append card
   document.getElementById("display-area").appendChild(newCard);
