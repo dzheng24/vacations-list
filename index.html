@@ -16,18 +16,19 @@
       <div class="row">
         <div class="col-md-6">
           <h1>David's Vacation List</h1>
-          <form>
+          <form id="my-form" class="needs-validation">
             <div class="form-group">
               <label for="inputDestinationName">Destination Name</label>
               <input
                 class="form-control"
                 id="inputDestinationName"
-                aria-describedby="emailHelp"
+                type="text"
+                required
               />
             </div>
             <div class="form-group">
               <label for="inputLocation">Location</label>
-              <input class="form-control" id="inputLocation" />
+              <input class="form-control" id="inputLocation" required />
             </div>
             <div class="form-group">
               <label for="inputPhoto">Photo</label>

@@ -1,47 +1,39 @@
-// for each of the input field, create a variable that holds the input
-
-document
-  .getElementById("inputDestinationName")
-  .addEventListener("change", handleDestinationName);
-
-document
-  .getElementById("inputLocation")
-  .addEventListener("change", handleLocation);
-
-document.getElementById("inputPhoto").addEventListener("change", handlePhoto);
-
-document
-  .getElementById("inputDescription")
-  .addEventListener("change", handleDescription);
+// functions to get data from individual input fields
 
 function handleDestinationName() {
-  let data = document.getElementById("inputDestinationName").value;
-  console.log(data);
+  return document.getElementById("inputDestinationName").value;
 }
 
 function handleLocation() {
-  let data = document.getElementById("inputLocation").value;
-  console.log(data);
+  return document.getElementById("inputLocation").value;
 }
 
 function handlePhoto() {
-  let data = document.getElementById("inputPhoto").value;
-  console.log(data);
+  return document.getElementById("inputPhoto").value;
 }
 
 function handleDescription() {
-  let data = document.getElementById("inputDescription").value;
-  console.log(data);
+  return document.getElementById("inputDescription").value;
 }
 
-// for the click button, create function that when clicked:
-// generates a card
-// append the information from the input fields to the card
-document.getElementById("my-button").addEventListener("click", generateCard);
+// submit button event
+document.getElementById("my-form").addEventListener("submit", handleSubmit);
 
-function generateCard(e) {
+function handleSubmit(e) {
   e.preventDefault();
 
+  // gather up all the information, and pass it to generateCard function
+  let destinationName = handleDestinationName();
+  let locationName = handleLocation();
+  let photo = handlePhoto();
+  let description = handleDescription();
+
+  generateCard(destinationName, locationName, photo, description);
+
+  // clear the input data
+}
+
+function generateCard(dest, loc, pic, desc) {
   // generate card
   let newCard = document.createElement("div");
   newCard.class = "card";
@@ -53,11 +45,22 @@ function generateCard(e) {
   newImage.src = "./test.jpeg";
   newCard.append(newImage);
 
-  // make location
+  // make new card body
+  let cardBody = document.createElement("div");
+  cardBody.class = "card-body";
+  newCard.append(cardBody);
+
+  // make destination name
+  let newTitle = document.createElement("h5");
+  newTitle.class = "card-title";
+  newTitle.innerHTML = dest;
+  cardBody.append(newTitle);
+
+  // make location name
   // make description
   // make EDIT button
   // make REMOVE button
 
   // append card
-  document.getElementById("display-area").append(newCard);
+  document.getElementById("display-area").appendChild(newCard);
 }
