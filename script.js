@@ -41,9 +41,23 @@ document.getElementById("my-button").addEventListener("click", generateCard);
 
 function generateCard(e) {
   e.preventDefault();
-  console.log("clicked");
-  // let test = document.getElementById("my-image");
-  // test.src = "./test.jpeg";
-  // let newPartial = document.getElementById("card-div").append(test);
-  // document.getElementById("display-area").append(newPartial);
+
+  // generate card
+  let newCard = document.createElement("div");
+  newCard.class = "card";
+  newCard.style = "width: 18rem;";
+
+  // within card, make image
+  let newImage = document.createElement("img");
+  newImage.class = "card-img-top";
+  newImage.src = "./test.jpeg";
+  newCard.append(newImage);
+
+  // make location
+  // make description
+  // make EDIT button
+  // make REMOVE button
+
+  // append card
+  document.getElementById("display-area").append(newCard);
 }
