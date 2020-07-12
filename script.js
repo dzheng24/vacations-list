@@ -37,50 +37,53 @@ function handleSubmit(e) {
 function generateCard(dest, loc, picLink, desc) {
   // generate card
   let newCard = document.createElement("div");
-  newCard.class = "card";
-  newCard.style = "width: 18rem;";
+  newCard.setAttribute("class", "card");
 
   // within card, make image
   let newImage = document.createElement("img");
-  newImage.class = "card-img-top";
-  newImage.src = "./test.jpeg";
-  newCard.append(newImage);
+  newImage.setAttribute("class", "card-img-top");
+  newImage.setAttribute("src", "./test.jpeg");
+  newCard.appendChild(newImage);
 
   // make new card body
   let cardBody = document.createElement("div");
-  cardBody.class = "card-body";
-  newCard.append(cardBody);
+  cardBody.setAttribute("class", "card-body");
+  newCard.appendChild(cardBody);
 
   // make destination name
   let newTitle = document.createElement("h5");
-  newTitle.class = "card-title";
+  newTitle.setAttribute("class", "card-title");
   newTitle.innerHTML = dest;
-  cardBody.append(newTitle);
+  cardBody.appendChild(newTitle);
 
   // make location name
   let newSubtitle = document.createElement("h6");
-  newSubtitle.class = "card-subtitle mb-2 text-muted";
+  newSubtitle.setAttribute("class", "card-subtitle mb-2 text-muted");
   newSubtitle.innerHTML = loc;
-  cardBody.append(newSubtitle);
+  cardBody.appendChild(newSubtitle);
 
   // make description
   let newDescription = document.createElement("p");
-  newDescription.class = "card-text";
-  newDescription.innerHTML = desc;
-  cardBody.append(newDescription);
+  newDescription.setAttribute("class", "card-text");
+  newDescription.innerText = desc;
+  cardBody.appendChild(newDescription);
+
+  // make a container to hold buttons
+  let buttonContainer = document.createElement("div");
+  buttonContainer.setAttribute("class", "button_container");
+  cardBody.appendChild(buttonContainer);
 
   // make EDIT button
   let editButton = document.createElement("button");
-  editButton.class = "btn btn-warning btn-sm";
-  editButton.innerHTML = "Edit";
-  newCard.append(editButton);
+  editButton.setAttribute("class", "btn btn-warning");
+  editButton.innerText = "Edit";
+  buttonContainer.appendChild(editButton);
 
   // make REMOVE button
   let deleteButton = document.createElement("button");
-  deleteButton.class = "btn btn-danger";
-  deleteButton.style.margin = "20px";
-  deleteButton.innerHTML = "Remove";
-  newCard.append(deleteButton);
+  deleteButton.setAttribute("class", "btn btn-danger");
+  deleteButton.innerText = "Remove";
+  buttonContainer.appendChild(deleteButton);
 
   // append card
   document.getElementById("display-area").appendChild(newCard);

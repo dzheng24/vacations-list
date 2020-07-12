@@ -1,0 +1,10 @@
+.button_container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.card {
+  margin: 20px;
+  width: 15rem;
+}
