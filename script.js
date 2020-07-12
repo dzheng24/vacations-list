@@ -31,6 +31,7 @@ function handleSubmit(e) {
   generateCard(destinationName, locationName, photo, description);
 
   // clear the input data
+  clearData();
 }
 
 function generateCard(dest, loc, picLink, desc) {
@@ -83,4 +84,9 @@ function generateCard(dest, loc, picLink, desc) {
 
   // append card
   document.getElementById("display-area").appendChild(newCard);
+}
+
+function clearData() {
+  let dataToClear = document.getElementById("my-form");
+  dataToClear.reset();
 }
