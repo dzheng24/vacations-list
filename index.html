@@ -13,33 +13,41 @@
   </head>
   <body>
     <div class="container">
-      <h1>David's Vacation List</h1>
-      <form>
-        <div class="form-group">
-          <label for="inputDestinationName">Destination Name</label>
-          <input
-            class="form-control"
-            id="inputDestinationName"
-            aria-describedby="emailHelp"
-          />
+      <div class="row">
+        <div class="col-md-6">
+          <h1>David's Vacation List</h1>
+          <form>
+            <div class="form-group">
+              <label for="inputDestinationName">Destination Name</label>
+              <input
+                class="form-control"
+                id="inputDestinationName"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inputLocation">Location</label>
+              <input class="form-control" id="inputLocation" />
+            </div>
+            <div class="form-group">
+              <label for="inputPhoto">Photo</label>
+              <input class="form-control" id="inputPhoto" />
+            </div>
+            <div class="form-group">
+              <label for="inputDescription">Description</label>
+              <input class="form-control" id="inputDescription" />
+            </div>
+            <button id="my-button" type="submit" class="btn btn-primary">
+              Add to my List
+            </button>
+          </form>
         </div>
-        <div class="form-group">
-          <label for="inputLocation">Location</label>
-          <input class="form-control" id="inputLocation" />
+        <div class="col-md-6">
+          <div id="display-area">
+            <h2>My WishList</h2>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="inputPhoto">Photo</label>
-          <input class="form-control" id="inputPhoto" />
-        </div>
-        <div class="form-group">
-          <label for="inputDescription">Description</label>
-          <input class="form-control" id="inputDescription" />
-        </div>
-        <button id="my-button" type="submit" class="btn btn-primary">
-          Add to my List
-        </button>
-      </form>
-      <div id="display-area"></div>
+      </div>
     </div>
 
     <script src="./script.js"></script>
