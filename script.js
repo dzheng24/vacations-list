@@ -91,6 +91,7 @@ function generateCard(dest, loc, picLink, desc) {
   let deleteButton = document.createElement("button");
   deleteButton.setAttribute("class", "btn btn-danger");
   deleteButton.innerText = "Remove";
+  deleteButton.addEventListener("click", handleRemove);
   buttonContainer.appendChild(deleteButton);
 
   // append card
@@ -128,4 +129,11 @@ function handleEdit(e) {
   if (newImageURL.length > 0) {
     oldImage.setAttribute("src", newImageURL);
   }
+}
+
+// function to handle removing card
+function handleRemove(e) {
+  let cardBody = e.target.parentElement.parentElement;
+  let card = cardBody.parentElement;
+  card.remove();
 }
