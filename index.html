@@ -13,10 +13,16 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header class="jumbotron jumbotron-fluid text-center">
+      <h1 class="display-4 text-center">Vacations Destinations List</h1>
+      <p class="lead">
+        Found exciting places to visition on your next vacation? Use the form
+        below to add them to your wishlist
+      </p>
+    </header>
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <h1>David's Vacation List</h1>
+        <div class="col-md-4">
           <form id="my-form" class="needs-validation">
             <div class="form-group">
               <label for="inputDestinationName">Destination Name</label>
@@ -24,20 +30,34 @@
                 class="form-control"
                 id="inputDestinationName"
                 type="text"
+                placeholder="Enter the name of Destination"
                 required
               />
             </div>
             <div class="form-group">
               <label for="inputLocation">Location</label>
-              <input class="form-control" id="inputLocation" required />
+              <input
+                class="form-control"
+                id="inputLocation"
+                placeholder="Where is it located?"
+                required
+              />
             </div>
             <div class="form-group">
               <label for="inputPhoto">Photo</label>
-              <input class="form-control" id="inputPhoto" />
+              <input
+                class="form-control"
+                id="inputPhoto"
+                placeholder="Enter an image url of the place"
+              />
             </div>
             <div class="form-group">
               <label for="inputDescription">Description</label>
-              <input class="form-control" id="inputDescription" />
+              <input
+                class="form-control"
+                id="inputDescription"
+                placeholder="Where is it located?"
+              />
             </div>
             <button id="my-button" type="submit" class="btn btn-primary">
               Add to my List
@@ -45,8 +65,9 @@
           </form>
         </div>
         <div class="col-md-6">
-          <h2>My WishList</h2>
-          <div id="display-area"></div>
+          <div id="display-area">
+            <h2>My WishList</h2>
+          </div>
         </div>
       </div>
     </div>
