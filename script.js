@@ -1,3 +1,5 @@
+"use strict";
+
 // functions to get data from individual input fields
 
 function handleDestinationName() {
@@ -44,7 +46,7 @@ function generateCard(dest, loc, picLink, desc) {
   newImage.setAttribute("class", "card-img-top");
 
   if (picLink.length === 0) {
-    newImage.setAttribute("src", "./test.jpeg");
+    newImage.setAttribute("src", "./test1.jpeg");
   } else {
     newImage.setAttribute("src", picLink);
   }
@@ -82,6 +84,7 @@ function generateCard(dest, loc, picLink, desc) {
   let editButton = document.createElement("button");
   editButton.setAttribute("class", "btn btn-warning");
   editButton.innerText = "Edit";
+  editButton.addEventListener("click", handleEdit);
   buttonContainer.appendChild(editButton);
 
   // make REMOVE button
@@ -94,7 +97,35 @@ function generateCard(dest, loc, picLink, desc) {
   document.getElementById("display-area").appendChild(newCard);
 }
 
+// remove input fiedl data after form submission
 function clearData() {
   let dataToClear = document.getElementById("my-form");
   dataToClear.reset();
+}
+
+// function to handle editing card
+function handleEdit(e) {
+  let cardBody = e.target.parentElement.parentElement;
+  let card = cardBody.parentElement;
+  console.log(card);
+
+  let oldName = cardBody.children[0];
+  let oldLocation = cardBody.children[1];
+  let oldImage = card.children[0];
+
+  let newName = prompt("Enter a new destination name");
+  let newLocation = prompt("Where is it located?");
+  let newImageURL = prompt("Enter a new image URL");
+
+  if (newName.length > 0) {
+    oldName.innerHTML = newName;
+  }
+
+  if (newLocation.length > 0) {
+    oldLocation.innerHTML = newLocation;
+  }
+
+  if (newImageURL.length > 0) {
+    oldImage.setAttribute("src", newImageURL);
+  }
 }
