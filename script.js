@@ -42,7 +42,12 @@ function generateCard(dest, loc, picLink, desc) {
   // within card, make image
   let newImage = document.createElement("img");
   newImage.setAttribute("class", "card-img-top");
-  newImage.setAttribute("src", "./test.jpeg");
+
+  if (picLink.length === 0) {
+    newImage.setAttribute("src", "./test.jpeg");
+  } else {
+    newImage.setAttribute("src", picLink);
+  }
   newCard.appendChild(newImage);
 
   // make new card body

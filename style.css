@@ -9,6 +9,12 @@
   width: 15rem;
 }
 
-#display-area {
+#wishlist-title {
   text-align: center;
+}
+
+#display-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
